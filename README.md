@@ -21,7 +21,7 @@
 <ol>
 <li>Style the front page using the provided psd. Only style elements that appear on the page. There is more elements in the design, but if we take the front page as an example, you only need to style header (logo and menu), four news items and a footer.</li>
 <li>If some elements have different order, just style them where they are positioned (hint: look at the news items on front page).</li>
-<li>Header should be styled in a way that when you scroll down it sticks to the top. There is no design for that, but black background with white links should do it.</li>
+<li>Header should be styled in a way that when you scroll down it sticks to the top of the page and is visible all of the time. There is no design for that, but what we want is black background with white logo and links.</li>
 <li>Also style one of the news - click on it on front page list and style the right sidebar. Everything else should be more or less styled already.</li>
 <li>Please have in mind that this should look OK on mobile as well.</li>
 </ol>
