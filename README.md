@@ -10,12 +10,12 @@
 <h2>Task</h2>
 <p>Your first task is to set the page locally:
 <ul>
-<li>Fork this repository and clone the code to your computer.</li>
+<li>Clone the code to your computer.</li>
 <li>Install database which is in root folder of the repository to your machine. You can use Phpmyadmin or any other tool to do that.</li>
 <li>Copy the file sites/default/example.settings.local.php to sites/default/settings.local.php. Update the file with the information for your database. Read the comment at the top of that file if you need better instructions.</li>
 </ul>
 <p>If you did everything right in previous steps the page should be opening on your localhost.</p>
-<p>Now it's time to begin the real work. Below are the tasks that you should accomplish. The basic theme (called adchallenge) is already there and is enabled on the page. If you are not familiar with creating themes in Drupal 8, than you should check <a href="https://www.drupal.org/docs/8/theming" target="_blank">this</a> page first. It will help you understand what goes where.</p>
+<p>Now it's time to begin the real work. Below are the tasks that you should accomplish. The basic theme (called adchallenge) is already there and is enabled on the page. If you are not familiar with creating themes in Drupal 8, then you should check <a href="https://www.drupal.org/docs/8/theming" target="_blank">this</a> page first. It will help you understand what goes where.</p>
 <p>We would like you to use Sass for styling. It doesn't matter how you compile it to CSS, as long as we have Sass files as an end result as well.</p>
 <p>Oh, and the last thing - the username and password for the Drupal account is admin/admin.</p>
 <ol>
@@ -27,6 +27,6 @@
 </ol>
 <h2>When done</h2>
 <ol>
-<li>Commit and Push your code to your new repository.</li>
+<li>After you're done push only the theme folder to a new repository.</li>
 <li>Send us a link to your new repository you created on your Github account. We will review your code and get back to you.</li>
 </ol>
