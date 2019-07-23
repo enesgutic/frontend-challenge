@@ -19,9 +19,9 @@
 <p>We would like you to use Sass for styling. It doesn't matter how you compile it to CSS, as long as we have Sass files as an end result as well.</p>
 <p>Oh, and the last thing - the username and password for the Drupal account is admin/admin, you can login by going to /user.</p>
 <ol>
-<li>Style the front page using the provided psd file (ad_challenge_design.zip). <strong>Don't mind about the content, use the one that is in the provided database.</strong> Just make sure you make it look the same as in design.</li>
+<li>Style the front page using the provided psd file (ad-challenge.psd). <strong>Don't mind about the content, use the one that is in the provided database.</strong> Just make sure you make it look the same as in design.</li>
 <li>Header should be styled in a way that when you scroll down it sticks to the top of the page and is visible all of the time. There is no design for that, so you're free to do it as you wish, as long as it works.</li>
-<li>Also style one of the news - click on it on front page list and style the right sidebar. Everything else should be more or less styled already.</li>
+<li>Also style one of the news - click on it on front page list and style the right sidebar. There is also a layer in design file to see how sidebar should look like. Also check if everything else needs any modification or addition.</li>
 <li>Please have in mind that this should look OK on mobile as well.</li>
 </ol>
 <h2>When done</h2>
