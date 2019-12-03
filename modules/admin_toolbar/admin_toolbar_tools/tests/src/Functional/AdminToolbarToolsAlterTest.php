@@ -1,22 +1,26 @@
 <?php
 
-namespace Drupal\admin_toolbar_tools\Tests;
+namespace Drupal\Tests\admin_toolbar_tools\Functional;
 
-use Drupal\simpletest\WebTestBase;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Tests for the existence of Admin Toolbar tools new links.
  *
  * @group admin_toolbar
  */
-class AdminToolbarToolsAlterTest extends WebTestBase {
+class AdminToolbarToolsAlterTest extends BrowserTestBase {
 
   /**
    * Modules to enable.
    *
    * @var array
    */
-  public static $modules = ['toolbar', 'admin_toolbar', 'admin_toolbar_tools'];
+  protected static $modules = [
+    'toolbar',
+    'admin_toolbar',
+    'admin_toolbar_tools',
+  ];
 
   /**
    * A test user with permission to access the administrative toolbar.
@@ -44,7 +48,7 @@ class AdminToolbarToolsAlterTest extends WebTestBase {
    */
   public function testAdminToolbarTools() {
     // Assert that special menu items are present in the HTML.
-    $this->assertRaw('class="toolbar-icon toolbar-icon-admin-toolbar-tools-flush"');
+    $this->assertSession()->responseContains('class="toolbar-icon toolbar-icon-admin-toolbar-tools-flush"');
   }
 
 }
