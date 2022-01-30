@@ -1,0 +1,35 @@
+@mixin flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flexList{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin listReset{
+  margin: 0;
+  padding: 0;
+}
+
+@mixin sectionHeader{
+  color: $bodyColor;
+  font-size: $bigTitle;
+  line-height: 42px;
+  font-weight: 300;
+  text-transform: uppercase;
+  position: relative;
+}
+
+@mixin sectionHeaderAfter{
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background-color: #0097A7;
+}

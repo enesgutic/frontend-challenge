@@ -1,0 +1,742 @@
+@import './_mixins.scss';
+@import './_variables.scss';
+
+.dark {
+  background: rgba(0, 0, 0, 1);
+}
+html{
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+body{
+  font-size: 16px;
+  font-family: $font;
+  background-color: #000;
+  color: $bodyColor;
+  overflow-x: hidden;
+}
+h2{
+  margin: 0;
+}
+
+
+// HEADER
+header{
+  width: 100%;
+  background: rgba(0, 0, 0, .25);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 22px 195px 20px 195px;
+  z-index: 999;
+  box-sizing: border-box;
+
+  .region-header{
+    width: 100%;
+    @include flexCenter;
+    justify-content: space-between;
+
+    .block-system-branding-block{
+      @include flexCenter;
+
+      .site-slogan{
+        color: $bodyColor;
+        font-size: $smallTitle;
+        font-weight: 300;
+        line-height: 28px;
+        text-transform: capitalize;
+        margin-left: 36px;
+        }
+    } // END .block-system-branding-block
+
+    .navigation{
+
+      ul.menu{
+        @include flexList;
+        font-weight: 500;
+
+        li.menu-item{
+          margin-right: 42px;
+
+          a{
+            text-decoration: none;
+            color: $bodyColor;
+            line-height: 16px;
+            font-size: $bodySize;
+            position: relative;
+
+            &::after{
+              content: "";
+              position: absolute;
+              width: 0%;
+              height: 3px;
+              bottom: -7px;
+              left: 0;
+              background-color: $accentGreenish;
+              transition: width .3s ease-in-out;
+            }
+            &:hover{
+              &::after{
+                width: 100%;
+              }
+            }
+          } // END a tag
+        } // END li.menu-item
+
+        li.menu-item:last-of-type{
+          margin-right: 0;
+        }
+      } //  END ul.menu
+    }
+  } // END region
+
+  @media only screen and (max-width: 1200px){
+    padding: 22px 100px 20px 100px;
+  }
+  @media only screen and (max-width: 991px){
+    padding: 22px 50px 20px 50px;
+  }
+  @media only screen and (max-width: 768px){
+    padding: 22px 0 20px 0;
+
+    .region-header{
+      width: 100%;
+      @include flexCenter;
+      flex-direction: column!important;
+
+      #block-adchallenge-branding{
+        img{
+          width: 80%;
+        }
+
+        .site-slogan{
+          margin-left: 0;
+          font-size: 1rem;
+          line-height: 0;
+        }
+      }
+
+      .navigation{
+        width: 100%;
+        margin-top: 15px;
+
+        .menu{
+          margin: 0;
+
+          .menu-item{
+            margin-right: 10px;
+          }
+          .menu-item:last-of-type{
+            margin-right: 0;
+          }
+        }
+      }
+    } // header .region
+  } // END responsive for header
+
+} // END header
+
+// ### END HEADER
+
+
+main{
+
+  // MainImage section
+  #block-top-content-header{
+    @include flexCenter;
+    padding-top: 209px;
+    padding-bottom: 215px;
+    position: relative;
+    background: transparent!important;
+
+    #challenge-home{
+      @include flexCenter;
+      flex-direction: column;
+      position: relative;
+
+      h2{
+        @include sectionHeader;
+        text-transform: none;
+
+        &::after{
+          content: "";
+          position: absolute;
+          bottom: -32px;
+          left: 0;
+          width: 100%;
+          height: 1px;
+          background-color: $bodyColor;
+        }
+
+      } // END h2
+
+      & > div:first-of-type {
+        margin-top: 22px;
+
+        h1{
+          font-weight: 300;
+          font-size: 64px;
+          line-height: 75px;
+          text-transform: capitalize;
+          color: $bodyColor;
+        }
+      } // END & > div:first-of-type
+
+      & > div:last-of-type{
+        margin-top: 52px;
+
+        a{
+          padding: 16px 47px;
+          border-radius: 5px;
+          background-color: $accentColor;
+          color: $bodyColor;
+          text-transform: uppercase;
+          text-decoration: none;
+          box-sizing: border-box;
+          transition: background-color .3s;
+          border: 1px solid $accentColor;
+
+          &:hover{
+            background-color: transparent;
+            border: 1px solid #fff;
+
+          }
+        }
+      } // END & > div:nth-child(2)
+    } // END #challenge-home
+  } // END #block-top-content-header
+
+  #block-top-content-header::before{
+    content: "";
+    background-image: url(http://localhost/frontend-challenge/sites/default/files/2020-02/hero.jpg);
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: .75;
+  }
+
+  // Latest News Section
+  #challenge-news{
+    padding: 123px 195px 102px 195px;
+
+    & > h2{
+      @include sectionHeader;
+
+    }
+
+    & > h2::after{
+      @include sectionHeaderAfter;
+    }
+
+    .views-element-container{
+      margin-top: 100px;
+
+      .view-content{
+        @include flexCenter;
+        justify-content: space-between;
+
+        .views-row{
+          width: 30%;
+          margin-right: 4.5%;
+
+          article h2{
+            font-size: $bigTitle;
+            font-weight: 500;
+            line-height: 28px;
+            margin-bottom: 10.5px;
+
+            a{
+              text-decoration: none;
+              color: $bodyColor;
+            }
+
+          } // END h2
+
+          // Article date
+          .createdDate{
+            color: $miscColor;
+            font-size: 12px;
+            margin-bottom: 24px;
+          }
+
+          // Article image
+          .image-style-article-teaser{
+            width: 100%;
+            object-fit: cover;
+          }
+        } // END .views-row
+
+        .views-row:last-of-type{
+          margin-right: 0;
+        }
+
+        // Article text
+        .field--name-body p{
+          font-size: $bodySize;
+          color: $darkerBodyColor;
+          line-height: 30px;
+          margin-top: 20px;
+        }
+
+        // Readmore
+        .node-readmore{
+          padding: 0;
+
+          a{
+            text-decoration: none;
+            color: $bodyColor;
+            line-height: 16px;
+            position: relative;
+
+
+            &::after{
+              color: $accentGreenish;
+              width: 7px;
+              height: 7px;
+              transform: rotate(45deg);
+              position: absolute;
+              display: block;
+              content: '';
+              border-top: 2px solid $accentGreenish;
+              border-right: 2px solid $accentGreenish;
+              margin-left: 85px;
+              top: 6px;
+              transition: all 300ms ease;
+            }
+          } // END a tag
+
+          a:hover::after{
+            border-top: 2px solid $accentColor;
+            border-right: 2px solid $accentColor;
+          }
+        }
+      } // END & .view-content
+    } // END .views-element-container
+  } // END #block-adchallenge-content (articles)
+
+  #block-latest-event{
+    padding: 103px 195px 103px 195px;
+    background-color: $darkBlueLayout;
+
+    #challenge-event{
+      @include flexCenter;
+
+      .img-left{
+        width: 30%;
+        margin-right: 4%;
+
+        &:last-of-type{
+          margin-right: 0;
+        }
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+
+      // .img-left > div{
+      //   text-align: center;
+      // }
+
+      .content-right{
+        width: 70%;
+      }
+
+      .content-right h2{
+        font-size: $bigTitle;
+        font-weight: 300;
+        text-transform: uppercase;
+        line-height: 42px;
+        position: relative;
+      }
+
+      .content-right h2::after{
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #0097A7;
+      }
+
+      .content-right p{
+        margin-top: 100px;
+        font-size: $bodySize;
+        line-height: 30px;
+        color: $darkerBodyColor;
+      }
+
+    } // END #challenge-event
+  } // END #block-latest-event (section)
+
+  // About me section
+  #block-about-me{
+    padding: 245px 195px 245px 195px;
+
+    #challenge-about-me{
+      @include flexCenter;
+
+      .content-left{
+        width: 50%;
+        margin-right: 4%;
+
+        h2{
+          @include sectionHeader;
+        }
+
+        h2::after{
+          @include sectionHeaderAfter;
+        }
+
+        p{
+          margin-top: 100px;
+          font-size: $bodySize;
+          line-height: 30px;
+          color: $darkerBodyColor;
+          font-weight: 400;
+          position: relative;
+          z-index: 999;
+        }
+      } // END .content-left
+
+      .img-right{
+        width: 50%;
+        text-align: center;
+        position: relative;
+
+        & > div::before{
+          content: '';
+          position: absolute;
+          width: 330px;
+          height: 330px;
+          background-color: #0F2123;
+          top: -170px;
+          left: -100px;
+          z-index: -1;
+        }
+
+        & > div::after{
+          content: '';
+          position: absolute;
+          width: 150px;
+          height: 150px;
+          background-color: #1D1524;
+          transform: rotate(-45deg);
+          bottom: -60px;
+          right: 35px;
+          z-index: -1;
+        }
+      } // END .img-right
+    } // END #challenge-about-me
+  } // EMD #block-about-me (section)
+
+  @media only screen and (min-width: 1440px){
+    .img-right{
+
+      & > div::after{
+        bottom: -60px!important;
+        right: -75px!important;
+      }
+    }
+  }
+  @media only screen and (min-width: 1200px) and (max-width: 1439px){
+    .img-right{
+
+      & > div::after{
+        bottom: -60px!important;
+        right: -135px!important;
+      }
+    }
+  }
+  @media only screen and (max-width: 1199px){
+    #challenge-news{
+      padding: 123px 100px 102px 100px;
+    }
+
+    #block-latest-event{
+      padding: 103px 100px 103px 100px!important;
+
+       .img-left{
+        margin-right: 4%;
+
+        img{
+          width: 100%;
+          border: 0;
+          object-fit: cover;
+          object-position: center left;
+        }
+       }
+    } // END #block-latest-event
+
+    #block-about-me{
+      padding: 245px 100px 245px 100px;
+
+      .content-left{
+        margin-right: 4%;
+      }
+
+      .img-right{
+
+        & > div::before{
+          top: -130px !important;
+          left: -180px !important;
+        }
+
+        & > div::after{
+          bottom: -60px!important;
+          right: -75px!important;
+        }
+
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    } // END #block-about-me
+  } // END main responsive max-1199
+
+  @media only screen and (max-width: 991px) {
+    #challenge-news{
+      padding: 123px 50px 102px 50px;
+    }
+
+    #block-latest-event{
+      padding: 103px 50px 103px 50px!important;
+
+       .img-left{
+        margin-right: 4%;
+
+        img{
+          width: 100%;
+          border: 0;
+          object-fit: cover;
+          object-position: center left;
+        }
+       }
+    } // END #block-latest-event
+
+    #block-about-me{
+      padding: 245px 50px 245px 50px;
+
+      .content-left{
+        margin-right: 4%;
+      }
+
+      .img-right{
+
+
+        & > div::before{
+          top: -130px !important;
+          left: -180px !important;
+        }
+
+        & > div::after{
+          bottom: -60px!important;
+          right: -75px!important;
+        }
+
+        img{
+          width: 100%;
+          object-fit: cover;
+        }
+      }
+    } // END #block-about-me
+  } // END main responsive max-991
+
+
+  @media only screen and (max-width: 768px){
+    main{
+      margin-top: -125px;
+    }
+    #challenge-home{
+
+      h2{
+        font-size: $bigTitleMobile!important;
+      }
+
+      div:first-of-type{
+        h1  {
+          font-size: 50px!important;
+        }
+      }
+
+    } // END #challenge-home
+
+    #challenge-news{
+       padding: 123px 50px 102px 50px;
+
+       h2{
+         font-size: $bigTitleMobile;
+         text-align: center;
+       }
+       h2::after{
+         left: 20%;
+         width: 60%;
+       }
+
+       .view-content{
+         flex-direction: column;
+
+         .views-row{
+           width: 100%!important;
+           margin-right: 0!important;
+           margin-bottom: 100px;
+
+           h2{
+             font-size: $bigTitleMobile!important;
+           }
+
+           .createdDate{
+            text-align: center;
+           }
+
+           .field--name-body p{
+            text-align: center;
+           }
+
+           .node__links{
+             text-align: center;
+
+             .node-readmore a::after{
+               margin-left: 232px;
+             }
+           }
+         }
+       }
+    } // END #challenge-news
+
+    #block-latest-event{
+      padding: 103px 0;
+
+      #challenge-event{
+        flex-direction: column;
+
+        .img-left{
+          width: 100%;
+          order: 2;
+        }
+        .content-right{
+          width: 100%;
+          order: 1;
+
+          h2{
+            font-size: $bigTitleMobile;
+            text-align: center;
+
+            &::after{
+              left: 20%;
+              width: 60%;
+            }
+          }
+
+          p{
+            text-align: center;
+          }
+        } // END .content-right
+      } // #challenge-event
+    } // END #block-latest-event
+
+    #block-about-me{
+      padding: 103px 50px;
+
+      #challenge-about-me{
+        flex-direction: column;
+
+        .content-left{
+          width: 100%;
+
+          h2{
+            font-size: $bigTitleMobile;
+            text-align: center;
+
+            &::after{
+              left: 20%;
+              width: 60%;
+            }
+          }
+
+          p{
+            text-align: center;
+          }
+        } // END .content-left
+
+        .img-right{
+          width: 100%;
+          margin-top: 20px;
+
+          & > div::before{
+            top: -30px!important;
+            left: -230px!important;
+          }
+
+          & > div::after{
+            bottom: -60px!important;
+            right: -75px!important;
+          }
+
+          img{
+            width: 100%;
+          }
+        }
+      } // #challenge-about-me
+    } // END #block-about-me
+
+
+  } // END main responsive max-768
+
+
+
+
+
+} // END .main
+
+footer{
+  background-color: #161E21;
+
+  nav{
+    @include flexCenter;
+
+     .menu{
+       @include flexCenter;
+       margin: 0;
+       padding: 0;
+       padding: 25px 0;
+
+       .menu-item{
+         margin-right: 29px;
+
+         a{
+          text-decoration: none;
+          color: $miscColor;
+          font-size: $bodySize;
+         }
+
+         &:last-of-type{
+           margin-right: 0;
+         }
+       } // END .menu-item (li)
+     } // END ul
+  } // END nav
+
+  #block-footercreated{
+    background-color: #1E2C2E;
+    padding: 20px 0;
+
+    p{
+      margin: 0;
+      font-size: $bodySize;
+      line-height: 14px;
+      text-align: center;
+
+      a{
+        color: $darkerBodyColor;
+        text-transform: uppercase;
+      }
+    }
+  }
+} // END footer
